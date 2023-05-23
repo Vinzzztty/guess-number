@@ -23,7 +23,10 @@ document.querySelector(".check").addEventListener("click", function () {
         document.querySelector("body").style.backgroundColor = "#60b347";
         document.querySelector(".number").style.width = "30rem";
 
-        document.querySelector(".highscore").textContent = score;
+        if (score > highScore) {
+            highScore = score;
+            document.querySelector(".highscore").textContent = highScore;
+        }
     }
 
     // When guess is too LOW
@@ -60,7 +63,6 @@ document.querySelector(".again").addEventListener("click", function () {
 
     document.querySelector(".score").textContent = score;
     document.querySelector(".guess").value = "";
-    // console.log(document.querySelector(".highscore").value);
 
     document.querySelector("body").style.backgroundColor = "#222";
     document.querySelector(".number").style.width = "15rem";
